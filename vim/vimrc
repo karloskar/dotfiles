@@ -50,6 +50,9 @@ let g:miniBufExplMapCTabSwitchBufs = 1
 nnoremap <C-PageUp> :bprevious!<CR>
 nnoremap <C-PageDown> :bnext!<CR>
 
+" vim-sparkup double quotes
+let g:sparkupDoubleQuote = 1
+
 " Fix ZZ
 nnoremap ZZ :wqall<CR>
 
