@@ -30,6 +30,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'sukima/xmledit'
 Bundle 'kien/ctrlp.vim'
 Bundle 'bling/vim-airline'
+Bundle 'Valloric/YouCompleteMe'
+
 
 if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"

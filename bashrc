@@ -87,3 +87,11 @@ fi
 if [ -f ~/.local/bin/bashmarks.sh ]; then
     source ~/.local/bin/bashmarks.sh
 fi
+
+export PATH=$PATH:~/.composer/vendor/bin
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/home/karloskar/google-cloud-sdk/path.bash.inc'
+
+# The next line enables bash completion for gcloud.
+source '/home/karloskar/google-cloud-sdk/completion.bash.inc'
