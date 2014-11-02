@@ -3,19 +3,19 @@ filetype off
 
 " from http://www.erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/
 let iCanHazVundle=1
-let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
 if !filereadable(vundle_readme)
     echo "Installing Vundle.."
     echo ""
     silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    silent !git clone https://github.com/gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim
     let iCanHazVundle=0
 endif
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Bundle 'gmarik/Vundle.vim'
 
 Bundle 'cschlueter/vim-wombat'
 Bundle 'fholgado/minibufexpl.vim'
@@ -32,11 +32,12 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'bling/vim-airline'
 Bundle 'Valloric/YouCompleteMe'
 
+call vundle#end()
 
 if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"
     echo ""
-    :BundleInstall!
+    :PluginInstall
 endif
 
 " NERDTree
@@ -59,8 +60,6 @@ let g:sparkupDoubleQuote = 1
 nnoremap ZZ :wqall<CR>
 
 syntax on
-filetype on
-filetype indent on
 filetype plugin indent on
 
 set cursorline
@@ -158,15 +157,12 @@ au BufWinEnter * silent! loadview
 
 " Command-T
 set wildignore=.git,*/node_modules/*,*.pyc,*.png,*.jpg,venv/*
-"nnoremap <C-t> :<C-u>CommandT<CR>
 nnoremap <C-t> :<C-u>CtrlP<CR>
-
-" close omnicomplete scratchpad
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " close buffer
 nnoremap <leader>c :bp\|:bd #<CR>
 
 " filetype specific settings
 autocmd Filetype yaml setlocal et ts=2 sw=2 sts=2
+
+autocmd FileType javascript setlocal et ts=2 sw=2 sts=2
