@@ -39,7 +39,6 @@ alias tmux="TERM=screen-256color tmux"
 
 alias sysupd="sudo apt-get update && sudo apt-get upgrade"
 
-alias grw="grunt watch"
 alias venv=". venv/bin/activate"
 
 # The rest is from a stock ubuntu .bashrc -->
@@ -95,3 +94,6 @@ source '/home/karloskar/google-cloud-sdk/path.bash.inc'
 
 # The next line enables bash completion for gcloud.
 source '/home/karloskar/google-cloud-sdk/completion.bash.inc'
+
+alias vim="nvim"
+alias f="cd ~/flask3 && tmuxp load ."
