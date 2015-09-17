@@ -1,3 +1,7 @@
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
