@@ -38,6 +38,7 @@ fi
 alias tmux="TERM=screen-256color tmux"
 
 alias sysupd="sudo apt-get update && sudo apt-get upgrade"
+alias sysupdd="sudo apt-get update && sudo apt-get dist-upgrade -y"
 
 alias venv=". venv/bin/activate"
 
@@ -96,4 +97,8 @@ source '/home/karloskar/google-cloud-sdk/path.bash.inc'
 source '/home/karloskar/google-cloud-sdk/completion.bash.inc'
 
 alias vim="nvim"
+
 alias f="cd ~/flask3 && tmuxp load ."
+alias vgu="cd ~/vg && vagrant up && cd -"
+alias vgs="cd ~/vg && vagrant suspend && cd -"
+alias vgh="cd ~/vg && vagrant halt && cd -"
