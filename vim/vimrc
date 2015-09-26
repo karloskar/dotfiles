@@ -129,6 +129,7 @@ if has("gui_running")
     colorscheme wombat
     " hide right scrollbar
     set go-=r
+    set go-=T
 else
     " This is console Vim.
     set t_Co=256
