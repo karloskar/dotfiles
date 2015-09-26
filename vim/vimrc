@@ -8,29 +8,30 @@ if !filereadable(vundle_readme)
     echo "Installing Vundle.."
     echo ""
     silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim
+    silent !git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/Vundle.vim
     let iCanHazVundle=0
 endif
 
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
-Bundle 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
-Bundle 'cschlueter/vim-wombat'
-Bundle 'fholgado/minibufexpl.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-repeat'
-Bundle 'tristen/vim-sparkup'
-Bundle 'StanAngeloff/php.vim'
-Bundle 'groenewege/vim-less'
-Bundle 'Glench/Vim-Jinja2-Syntax'
-Bundle 'scrooloose/nerdtree'
-Bundle 'sukima/xmledit'
-Bundle 'kien/ctrlp.vim'
-Bundle 'bling/vim-airline'
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'cschlueter/vim-wombat'
+Plugin 'fholgado/minibufexpl.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'tristen/vim-sparkup'
+Plugin 'StanAngeloff/php.vim'
+Plugin 'groenewege/vim-less'
+Plugin 'Glench/Vim-Jinja2-Syntax'
+Plugin 'scrooloose/nerdtree'
+Plugin 'sukima/xmledit'
+Plugin 'kien/ctrlp.vim'
+Plugin 'bling/vim-airline'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'mxw/vim-jsx'
 
 call vundle#end()
 
@@ -126,6 +127,8 @@ if has("gui_running")
     set lines=50 columns=160
     set gfn=Ubuntu\ Mono\ derivative\ Powerline\ 12
     colorscheme wombat
+    " hide right scrollbar
+    set go-=r
 else
     " This is console Vim.
     set t_Co=256

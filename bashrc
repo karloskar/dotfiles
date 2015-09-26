@@ -1,3 +1,7 @@
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -33,14 +37,6 @@ PS1='\n\e${KO_USER_COLOR}\u \e${KO_GRAY_COLOR}at \
 \e${KO_GREEN_COLOR}\w \e${KO_GRAY_COLOR} \e${KO_DEFAULT_COLOR}
 \$ '
 fi
-
-# TMUX
-alias tmux="TERM=screen-256color tmux"
-
-alias sysupd="sudo apt-get update && sudo apt-get upgrade"
-alias sysupdd="sudo apt-get update && sudo apt-get dist-upgrade -y"
-
-alias venv=". venv/bin/activate"
 
 # The rest is from a stock ubuntu .bashrc -->
 #
@@ -91,10 +87,14 @@ fi
 export PATH=$PATH:~/.composer/vendor/bin
 
 # The next line updates PATH for the Google Cloud SDK.
-source '/home/karloskar/google-cloud-sdk/path.bash.inc'
+if [ -f ~/google-cloud-sdk/path.bash.inc ]; then
+    source '~/google-cloud-sdk/path.bash.inc'
+fi
 
 # The next line enables bash completion for gcloud.
-source '/home/karloskar/google-cloud-sdk/completion.bash.inc'
+if [ -f ~/google-cloud-sdk/completion.bash.inc ]; then
+    source '~/google-cloud-sdk/completion.bash.inc'
+fi
 
 alias vim="nvim"
 
@@ -102,3 +102,11 @@ alias f="cd ~/flask3 && tmuxp load ."
 alias vgu="cd ~/vg && vagrant up && cd -"
 alias vgs="cd ~/vg && vagrant suspend && cd -"
 alias vgh="cd ~/vg && vagrant halt && cd -"
+
+# TMUX
+alias tmux="TERM=screen-256color tmux"
+
+alias sysupd="sudo apt-get update && sudo apt-get upgrade"
+alias sysupdd="sudo apt-get update && sudo apt-get dist-upgrade -y"
+
+alias venv=". venv/bin/activate"
