@@ -32,6 +32,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'mxw/vim-jsx'
+Plugin 'vim-scripts/DeleteTrailingWhitespace'
 
 call vundle#end()
 
@@ -127,7 +128,7 @@ if has("gui_running")
     set lines=50 columns=160
     set gfn=Ubuntu\ Mono\ derivative\ Powerline\ 12
     colorscheme wombat
-    " hide right scrollbar
+    " hide right scrollbar and toolbar
     set go-=r
     set go-=T
 else
@@ -170,3 +171,7 @@ nnoremap <leader>c :bp\|:bd #<CR>
 autocmd Filetype yaml setlocal et ts=2 sw=2 sts=2
 
 autocmd FileType javascript setlocal et ts=2 sw=2 sts=2
+
+" DeleteTrailingWhitespace
+let g:DeleteTrailingWhitespace = 1
+let g:DeleteTrailingWhitespace_Action = 'delete'
