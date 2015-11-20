@@ -160,7 +160,7 @@ imap <Leader>v  <C-O>:set paste<CR><C-r>*<C-O>:set nopaste<CR>
 au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
 
-" Command-T
+" CtrlP
 set wildignore=.git,*/node_modules/*,*.pyc,*.png,*.jpg,venv/*
 nnoremap <C-t> :<C-u>CtrlP<CR>
 
