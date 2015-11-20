@@ -1,4 +1,4 @@
-install: install-vim install-bash install-git install-bash install-tmux done
+install: install-vim install-bash install-zsh install-git install-bash install-tmux done
 
 PWD_INIT=${PWD}
 
@@ -10,6 +10,11 @@ install-vim:
 install-bash:
 	@rm -f ~/.bashrc
 	@ln -s ${PWD_INIT}/bashrc ~/.bashrc
+
+install-zsh:
+	@rm -f ~/.zshrc
+	@ln -s ${PWD_INIT}/zshrc ~/.zshrc
+	@ln -sf ${PWD_INIT}/ponty-agnoster.zsh-theme ~/.oh-my-zsh/themes/ponty-agnoster.zsh-theme
 
 install-git:
 	@rm -f ~/.gitconfig
