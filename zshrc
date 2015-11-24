@@ -110,3 +110,5 @@ function clrs () {
 }
 
 export TERM='xterm-256color'
+
+unsetopt nomatch
