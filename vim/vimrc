@@ -89,6 +89,11 @@ if exists('+colorcolumn')
     set colorcolumn=100
 endif
 
+" folding
+set foldmethod=indent
+set foldnestmax=1
+set foldenable
+set foldlevel=4
 
 " For airline
 let g:airline_powerline_fonts = 1
@@ -175,7 +180,3 @@ autocmd FileType javascript setlocal et ts=2 sw=2 sts=2
 " DeleteTrailingWhitespace
 let g:DeleteTrailingWhitespace = 1
 let g:DeleteTrailingWhitespace_Action = 'delete'
-
-" folding
-set foldmethod=indent
-set foldnestmax=1
