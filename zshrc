@@ -53,7 +53,8 @@ plugins=(git)
 
 # User configuration
 
-  export PATH="/home/karloskar/.local/bin:/home/karloskar/bin:/home/karloskar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/karloskar/.composer/vendor/bin"
+export PATH="/home/karloskar/.local/bin:/home/karloskar/bin:/home/karloskar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/karloskar/.composer/vendor/bin"
+export PATH="$PATH:/home/karloskar/.google_appengine/"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -112,3 +113,15 @@ function clrs () {
 export TERM='xterm-256color'
 
 unsetopt nomatch
+
+PROMPT_EOL_MARK=''
+
+# The next line updates PATH for the Google Cloud SDK.
+if [[ -a '/home/karloskar/google-cloud-sdk/path.zsh.inc' ]]; then
+    source '/home/karloskar/google-cloud-sdk/path.zsh.inc'
+fi
+
+# The next line enables shell command completion for gcloud.
+if [[ -a '/home/karloskar/google-cloud-sdk/completion.zsh.inc' ]]; then
+    source '/home/karloskar/google-cloud-sdk/completion.zsh.inc'
+fi
