@@ -53,7 +53,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/home/karloskar/.local/bin:/home/karloskar/bin:/home/karloskar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/karloskar/.composer/vendor/bin"
+export PATH="/home/karloskar/bin:/home/karloskar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/karloskar/.composer/vendor/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -114,7 +114,6 @@ export TERM='xterm-256color'
 # zsh stuff
 unsetopt nomatch
 PROMPT_EOL_MARK=''
-export DISABLE_AUTO_TITLE = 'true' # for tmux?
 
 # The next line updates PATH for the Google Cloud SDK.
 if [[ -a '/home/karloskar/google-cloud-sdk/path.zsh.inc' ]]; then

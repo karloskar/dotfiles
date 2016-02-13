@@ -32,6 +32,10 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/DeleteTrailingWhitespace'
+" jsx
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+
 
 call vundle#end()
 
