@@ -124,3 +124,12 @@ fi
 if [[ -a '/home/karloskar/google-cloud-sdk/completion.zsh.inc' ]]; then
     source '/home/karloskar/google-cloud-sdk/completion.zsh.inc'
 fi
+
+function pntydbdump () {
+    if [ -z "$1" ]
+    then
+        echo "Feed me a stray cat"
+    else
+        mysqldump -nt --skip-triggers $1 | gzip -c9 > $1.sql.gz
+    fi
+}

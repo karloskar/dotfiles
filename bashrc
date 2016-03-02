@@ -110,3 +110,12 @@ alias sysupd="sudo apt-get update && sudo apt-get upgrade"
 alias sysupdd="sudo apt-get update && sudo apt-get dist-upgrade -y"
 
 alias venv=". venv/bin/activate"
+
+function pntydbdump () {
+    if [ -z "$1" ]
+    then
+        echo "Feed me a stray cat"
+    else
+        mysqldump -nt --skip-triggers $1 | gzip -c9 > $1.sql.gz
+    fi
+}
