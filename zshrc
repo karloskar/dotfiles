@@ -53,7 +53,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/home/karloskar/bin:/home/karloskar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/karloskar/.composer/vendor/bin"
+export PATH="/home/karloskar/bin:/home/karloskar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -115,13 +115,21 @@ export TERM='xterm-256color'
 unsetopt nomatch
 PROMPT_EOL_MARK=''
 
-# The next line updates PATH for the Google Cloud SDK.
+#
+# GOOGLE
+#
+
+if [[ -d '/home/karloskar/google-cloud-sdk/platform/google_appengine' ]]; then
+    export PATH=$PATH:/home/karloskar/google-cloud-sdk/platform/google_appengine
+fi
+
 if [[ -a '/home/karloskar/google-cloud-sdk/path.zsh.inc' ]]; then
+    # The next line updates PATH for the Google Cloud SDK.
     source '/home/karloskar/google-cloud-sdk/path.zsh.inc'
 fi
 
-# The next line enables shell command completion for gcloud.
 if [[ -a '/home/karloskar/google-cloud-sdk/completion.zsh.inc' ]]; then
+    # The next line enables shell command completion for gcloud.
     source '/home/karloskar/google-cloud-sdk/completion.zsh.inc'
 fi
 
