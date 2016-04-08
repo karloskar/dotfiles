@@ -192,3 +192,6 @@ let g:javascript_enable_domhtmlcss=1
 " DeleteTrailingWhitespace
 let g:DeleteTrailingWhitespace = 1
 let g:DeleteTrailingWhitespace_Action = 'delete'
+
+" Let webpack know we've saved a file
+set backupcopy=yes
