@@ -87,9 +87,8 @@ source $ZSH/oh-my-zsh.sh
 alias vim="nvim"
 
 alias f="cd ~/flask3 && tmuxp load ."
-alias vgu="cd ~/vg && vagrant up && cd -"
-alias vgs="cd ~/vg && vagrant suspend && cd -"
-alias vgh="cd ~/vg && vagrant halt && cd -"
+alias vgu="cd ~/projects/prs3-docker && docker-compose up -d && cd -"
+alias vgs="cd ~/projects/prs3-docker && docker-compose stop && cd -"
 
 alias sysupd="sudo apt-get update && sudo apt-get upgrade"
 alias sysupdd="sudo apt-get update && sudo apt-get dist-upgrade -y"
@@ -141,3 +140,13 @@ function pntydbdump () {
         mysqldump -nt --skip-triggers $1 | gzip -c9 > $1.sql.gz
     fi
 }
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f /home/karloskar/projects/google-cloud-sdk/path.zsh.inc ]; then
+  source '/home/karloskar/projects/google-cloud-sdk/path.zsh.inc'
+fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f /home/karloskar/projects/google-cloud-sdk/completion.zsh.inc ]; then
+  source '/home/karloskar/projects/google-cloud-sdk/completion.zsh.inc'
+fi

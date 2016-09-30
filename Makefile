@@ -5,6 +5,7 @@ PWD_INIT=${PWD}
 install-vim:
 	@rm -rf ~/.vim ~/.vimrc
 	@ln -s ${PWD_INIT}/vim ~/.vim
+	@mkdir -p ~/.config/nvim && ln -s ~/.vim/vimrc ~/.config/nvim/init.vim
 	@ln -s ~/.vim/vimrc ~/.vimrc
 
 install-bash:
