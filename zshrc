@@ -87,9 +87,8 @@ source $ZSH/oh-my-zsh.sh
 alias vim="nvim"
 
 alias f="cd ~/flask3 && tmuxp load ."
-alias vgu="cd ~/vg && vagrant up && cd -"
-alias vgs="cd ~/vg && vagrant suspend && cd -"
-alias vgh="cd ~/vg && vagrant halt && cd -"
+alias vgu="cd ~/projects/prs3-docker && docker-compose up -d && cd -"
+alias vgs="cd ~/projects/prs3-docker && docker-compose stop && cd -"
 
 alias sysupd="sudo apt-get update && sudo apt-get upgrade"
 alias sysupdd="sudo apt-get update && sudo apt-get dist-upgrade -y"
