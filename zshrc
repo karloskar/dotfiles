@@ -114,24 +114,6 @@ export TERM='xterm-256color'
 unsetopt nomatch
 PROMPT_EOL_MARK=''
 
-#
-# GOOGLE
-#
-
-if [[ -d '/home/karloskar/google-cloud-sdk/platform/google_appengine' ]]; then
-    export PATH=$PATH:/home/karloskar/google-cloud-sdk/platform/google_appengine
-fi
-
-if [[ -a '/home/karloskar/google-cloud-sdk/path.zsh.inc' ]]; then
-    # The next line updates PATH for the Google Cloud SDK.
-    source '/home/karloskar/google-cloud-sdk/path.zsh.inc'
-fi
-
-if [[ -a '/home/karloskar/google-cloud-sdk/completion.zsh.inc' ]]; then
-    # The next line enables shell command completion for gcloud.
-    source '/home/karloskar/google-cloud-sdk/completion.zsh.inc'
-fi
-
 function pntydbdump () {
     if [ -z "$1" ]
     then
@@ -141,6 +123,10 @@ function pntydbdump () {
     fi
 }
 
+
+#
+# GOOGLE
+#
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f /home/karloskar/projects/google-cloud-sdk/path.zsh.inc ]; then
   source '/home/karloskar/projects/google-cloud-sdk/path.zsh.inc'
