@@ -18,7 +18,7 @@ if [ -f ~/.vim/bundle/xmledit/ftplugin/javascript.jsx.vim ]
 then
   echo "javascript.jsx.vim symlink already exists"
 else
-  ln -s ~/.vim/bundle/xmledit/ftplugin/html.vim ~/.vim/bundle/xmledit/ftplugin/javascript.jsx.vim
+  ln -s ~/.vim/bundle/xmledit/ftplugin/html.vim ~/.vim/bundle/xmledit/ftplugin/javascript.vim
 fi
 
 echo "Done."
