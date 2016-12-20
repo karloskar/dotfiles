@@ -87,6 +87,7 @@ source $ZSH/oh-my-zsh.sh
 alias vim="nvim"
 
 alias f="cd ~/flask3 && tmuxp load ."
+alias p="cd ~/projects/prs && tmuxp load ."
 alias vgu="cd ~/projects/prs3-docker && docker-compose up -d && cd -"
 alias vgs="cd ~/projects/prs3-docker && docker-compose stop && cd -"
 
