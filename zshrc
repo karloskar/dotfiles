@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/karloskar/.oh-my-zsh
+export ZSH=/home/karloskar/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -53,8 +53,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/home/karloskar/.local/bin:/home/karloskar/bin:/home/karloskar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/karloskar/.composer/vendor/bin"
-export PATH="$PATH:/home/karloskar/.google_appengine/"
+export PATH="/home/karloskar/bin:/home/karloskar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -88,9 +87,9 @@ source $ZSH/oh-my-zsh.sh
 alias vim="nvim"
 
 alias f="cd ~/flask3 && tmuxp load ."
-alias vgu="cd ~/vg && vagrant up && cd -"
-alias vgs="cd ~/vg && vagrant suspend && cd -"
-alias vgh="cd ~/vg && vagrant halt && cd -"
+alias p="cd ~/projects/prs && tmuxp load ."
+alias vgu="cd ~/projects/prs3-docker && docker-compose up -d && cd -"
+alias vgs="cd ~/projects/prs3-docker && docker-compose stop && cd -"
 
 alias sysupd="sudo apt-get update && sudo apt-get upgrade"
 alias sysupdd="sudo apt-get update && sudo apt-get dist-upgrade -y"
@@ -112,16 +111,29 @@ function clrs () {
 
 export TERM='xterm-256color'
 
+# zsh stuff
 unsetopt nomatch
-
 PROMPT_EOL_MARK=''
 
+function pntydbdump () {
+    if [ -z "$1" ]
+    then
+        echo "Feed me a stray cat"
+    else
+        mysqldump -nt --skip-triggers $1 | gzip -c9 > $1.sql.gz
+    fi
+}
+
+
+#
+# GOOGLE
+#
 # The next line updates PATH for the Google Cloud SDK.
-if [[ -a '/home/karloskar/google-cloud-sdk/path.zsh.inc' ]]; then
-    source '/home/karloskar/google-cloud-sdk/path.zsh.inc'
+if [ -f /home/karloskar/projects/google-cloud-sdk/path.zsh.inc ]; then
+  source '/home/karloskar/projects/google-cloud-sdk/path.zsh.inc'
 fi
 
 # The next line enables shell command completion for gcloud.
-if [[ -a '/home/karloskar/google-cloud-sdk/completion.zsh.inc' ]]; then
-    source '/home/karloskar/google-cloud-sdk/completion.zsh.inc'
+if [ -f /home/karloskar/projects/google-cloud-sdk/completion.zsh.inc ]; then
+  source '/home/karloskar/projects/google-cloud-sdk/completion.zsh.inc'
 fi

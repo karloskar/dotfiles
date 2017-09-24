@@ -12,9 +12,9 @@ bind k select-pane -U
 bind l select-pane -R
 set -sg escape-time 0
 
-set -g mode-mouse on
-setw -g mouse-select-window on
-setw -g mouse-select-pane on
+set -g mouse on
+bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'copy-mode -e; send-keys -M'"
+
 
 set-window-option -g window-status-current-bg cyan
 set-window-option -g window-status-current-fg black
