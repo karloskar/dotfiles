@@ -33,6 +33,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/DeleteTrailingWhitespace'
+Plugin 'vim-syntastic/syntastic'
 " jsx
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
@@ -61,6 +62,16 @@ nnoremap <C-PageDown> :bnext!<CR>
 
 " vim-sparkup double quotes
 let g:sparkupDoubleQuote = 1
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Fix ZZ
 nnoremap ZZ :wqall<CR>
