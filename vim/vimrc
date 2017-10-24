@@ -1,56 +1,44 @@
 set nocompatible
 filetype off
 
-" from http://www.erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/
-let iCanHazVundle=1
-let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
-if !filereadable(vundle_readme)
-    echo "Installing Vundle.."
-    echo ""
-    silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/Vundle.vim
-    let iCanHazVundle=0
-endif
+call plug#begin('~/.vim/plugged')
 
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'cschlueter/vim-wombat'
-Plugin 'fholgado/minibufexpl.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'tristen/vim-sparkup'
-Plugin 'StanAngeloff/php.vim'
-Plugin 'groenewege/vim-less'
-Plugin 'Glench/Vim-Jinja2-Syntax'
-Plugin 'scrooloose/nerdtree'
-Plugin 'sukima/xmledit'
-Plugin 'kien/ctrlp.vim'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-scripts/DeleteTrailingWhitespace'
+Plug 'cschlueter/vim-wombat'
+Plug 'fholgado/minibufexpl.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tristen/vim-sparkup'
+Plug 'StanAngeloff/php.vim', { 'for': 'php' }
+Plug 'groenewege/vim-less'
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'sukima/xmledit'
+Plug 'kien/ctrlp.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'vim-scripts/DeleteTrailingWhitespace'
 " jsx
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
+Plug 'mxw/vim-jsx'
+Plug 'w0rp/ale'
 
 
-call vundle#end()
+call plug#end()
 
-if iCanHazVundle == 0
-    echo "Installing Bundles, please ignore key map error messages"
-    echo ""
-    :PluginInstall
-endif
+" ale
+let g:airline#extensions#ale#enabled = 1
+let g:ale_linters = {
+\    'javascript': [],
+\    'python': ['flake8'],
+\}
+let g:ale_linter_aliases = {'javascript.jsx': 'javascript'}
 
 " NERDTree
 nmap <silent> <F3> :NERDTreeToggle<CR>
 
 " set leader
 let mapleader = ","
-
 
 " minibufexpl
 let g:miniBufExplMapWindowNavVim = 1

@@ -1,4 +1,7 @@
 vim/bundle/*
 vim/view/*
+vim/autoload/*
+vim/plugged/*
 .gitmodules
 *.swp
+zshrc-extra
