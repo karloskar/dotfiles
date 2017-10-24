@@ -21,7 +21,7 @@ Plug 'vim-scripts/DeleteTrailingWhitespace'
 " jsx
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
 Plug 'mxw/vim-jsx'
-Plug 'w0rp/ale'
+Plug 'flowtype/vim-flow'
 
 
 call plug#end()
@@ -33,6 +33,9 @@ let g:ale_linters = {
 \    'python': ['flake8'],
 \}
 let g:ale_linter_aliases = {'javascript.jsx': 'javascript'}
+
+" flow
+let g:flow#showquickfix = 0
 
 " NERDTree
 nmap <silent> <F3> :NERDTreeToggle<CR>
