@@ -136,7 +136,8 @@ if has("gui_running")
     " GUI is running or is about to start.
     " Set size.
     set lines=50 columns=160
-    set gfn=Ubuntu\ Mono\ derivative\ Powerline\ 12
+    set linespace=-1
+    set gfn=Fira\ Mono\ for\ Powerline\ 11
     colorscheme wombat
     " hide right scrollbar and toolbar
     set go-=r
