@@ -28,7 +28,7 @@ alias dbu="cd ~/projects/prs && docker-compose -f docker/docker-compose.yml up -
 alias dbs="cd ~/projects/prs && docker-compose -f docker/docker-sompose.yml stop && cd -"
 
 alias sysupd="sudo apt-get update && sudo apt-get upgrade"
-alias sysupdd="sudo apt-get update && sudo apt-get dist-upgrade -y"
+alias sysupdd="sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y"
 
 alias venv=". venv/bin/activate"
 
