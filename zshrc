@@ -24,6 +24,8 @@ alias f="cd ~/flask3 && tmuxp load ."
 alias p="cd ~/projects/prs && tmuxp load ."
 alias vgu="cd ~/projects/prs3-docker && docker-compose up -d && cd -"
 alias vgs="cd ~/projects/prs3-docker && docker-compose stop && cd -"
+alias dbu="cd ~/projects/prs && docker-compose -f docker/docker-compose.yml up -d && cd -"
+alias dbs="cd ~/projects/prs && docker-compose -f docker/docker-sompose.yml stop && cd -"
 
 alias sysupd="sudo apt-get update && sudo apt-get upgrade"
 alias sysupdd="sudo apt-get update && sudo apt-get dist-upgrade -y"
@@ -51,4 +53,8 @@ fi
 # The next line enables shell command completion for gcloud.
 if [ -f /home/karloskar/projects/google-cloud-sdk/completion.zsh.inc ]; then
   source '/home/karloskar/projects/google-cloud-sdk/completion.zsh.inc'
+fi
+
+if [ -f /home/karloskar/dotfiles/zshrc-extra ]; then
+  source '/home/karloskar/dotfiles/zshrc-extra'
 fi
