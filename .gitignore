@@ -5,3 +5,4 @@ vim/plugged/*
 .gitmodules
 *.swp
 zshrc-extra
+.netrwhist
