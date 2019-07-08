@@ -7,13 +7,14 @@ Plug 'cschlueter/vim-wombat'
 Plug 'fholgado/minibufexpl.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'tristen/vim-sparkup'
+Plug 'rstacruz/sparkup'
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'groenewege/vim-less'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'sukima/xmledit'
-Plug 'kien/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
@@ -59,9 +60,6 @@ nnoremap <C-PageDown> :bnext!<CR>
 
 " vim-sparkup double quotes
 let g:sparkupDoubleQuote = 1
-
-" Fix ZZ
-nnoremap ZZ :wqall<CR>
 
 syntax on
 filetype plugin indent on
@@ -171,9 +169,19 @@ imap <Leader>v  <C-O>:set paste<CR><C-r>*<C-O>:set nopaste<CR>
 au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
 
-" CtrlP
 set wildignore=.git,*/node_modules/*,*.pyc,*.png,*.jpg,venv/*
-nnoremap <C-t> :<C-u>CtrlP<CR>
+" fzf.vim
+let g:fzf_action = {
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit'
+\ }
+nnoremap <silent> <C-t> :FZF<CR>
+augroup fzf
+  autocmd!
+  autocmd! FileType fzf
+  autocmd  FileType fzf set laststatus=0 noshowmode noruler
+    \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+augroup END
 
 " close buffer
 nnoremap <leader>c :bp\|:bd #<CR>

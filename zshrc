@@ -11,7 +11,7 @@ ZSH_THEME="ponty-agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git fzf)
 
 # User configuration
 export PATH="/home/karloskar/.yarn/bin:/home/karloskar/bin:/home/karloskar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
@@ -58,3 +58,7 @@ fi
 if [ -f /home/karloskar/dotfiles/zshrc-extra ]; then
   source '/home/karloskar/dotfiles/zshrc-extra'
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='rg --files --ignore --follow --glob "!{.git,node_modules,dotfiles,venv,vendor}/"'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

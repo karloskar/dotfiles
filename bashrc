@@ -119,3 +119,5 @@ function pntydbdump () {
         mysqldump -nt --skip-triggers $1 | gzip -c9 > $1.sql.gz
     fi
 }
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
