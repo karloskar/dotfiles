@@ -60,5 +60,5 @@ if [ -f /home/karloskar/dotfiles/zshrc-extra ]; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='rg --files --ignore --follow --glob "!{.git,node_modules,dotfiles,venv,vendor}/"'
+export FZF_DEFAULT_COMMAND='rg --files --ignore --follow --no-messages --glob "!{.git,node_modules,dotfiles,venv,vendor}/"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
