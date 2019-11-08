@@ -36,10 +36,12 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier', 'remove_trailing_lines', 'trim_whitespace'],
+\   'javascript.jsx': ['prettier', 'remove_trailing_lines', 'trim_whitespace'],
+\   'scss': ['prettier', 'remove_trailing_lines', 'trim_whitespace'],
+\   'css': ['prettier', 'remove_trailing_lines', 'trim_whitespace'],
 \}
 let g:ale_fix_on_save = 1
 let g:ale_linter_aliases = {'javascript.jsx': 'javascript'}
-let g:ale_fixer_aliases = {'javascript.jsx': 'javascript'}
 let g:ale_change_sign_column_color = 1
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '!'
@@ -137,7 +139,10 @@ set backspace=eol,indent,start
 
 " gruvbox specific
 let g:gruvbox_italic=1
+let g:gruvbox_italicize_strings=1
 let g:gruvbox_contrast_dark='hard'
+" needed for gruvbox
+set bg=dark
 
 " Window size
 if has("gui_running")
@@ -200,6 +205,7 @@ nnoremap <leader>c :bp\|:bd #<CR>
 autocmd Filetype yaml setlocal et ts=2 sw=2 sts=2
 
 autocmd FileType javascript setlocal et ts=2 sw=2 sts=2
+autocmd FileType scss setlocal et ts=2 sw=2 sts=2
 
 " JSX
 let g:jsx_ext_required=0
