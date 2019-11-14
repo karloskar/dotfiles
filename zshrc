@@ -14,7 +14,7 @@ ZSH_THEME="ponty-agnoster"
 plugins=(git fzf)
 
 # User configuration
-export PATH="/home/karloskar/.yarn/bin:/home/karloskar/bin:/home/karloskar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="/home/karloskar/bin:/home/karloskar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -53,10 +53,6 @@ fi
 # The next line enables shell command completion for gcloud.
 if [ -f /home/karloskar/projects/google-cloud-sdk/completion.zsh.inc ]; then
   source '/home/karloskar/projects/google-cloud-sdk/completion.zsh.inc'
-fi
-
-if [ -f /home/karloskar/dotfiles/zshrc-extra ]; then
-  source '/home/karloskar/dotfiles/zshrc-extra'
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
