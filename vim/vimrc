@@ -30,7 +30,8 @@ call plug#end()
 
 " ale
 let g:ale_linters = {
-\    'javascript': ['prettier'],
+\    'javascript': ['eslint'],
+\    'javascript.jsx': ['eslint'],
 \    'python': ['flake8'],
 \}
 let g:ale_fixers = {
@@ -47,6 +48,8 @@ let g:ale_change_sign_column_color = 1
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '!'
 let g:ale_sign_warning = '?'
+let g:ale_javascript_eslint_executable = '/home/karloskar/.yarn/bin/eslint'
+let g:ale_javascript_eslint_options = '-c /home/karloskar/.eslintrc.js'
 hi! link SignColumn LineNr
 hi! link ALESignColumnWithErrors DiffDelete
 hi! link ALESignColumnWithoutErrors LineNr
