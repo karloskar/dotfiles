@@ -50,6 +50,7 @@ let g:ale_sign_error = '!'
 let g:ale_sign_warning = '?'
 let g:ale_javascript_eslint_executable = '/home/karloskar/.yarn/bin/eslint'
 let g:ale_javascript_eslint_options = '-c /home/karloskar/.eslintrc.js'
+let g:ale_javascript_eslint_use_global = 1
 hi! link SignColumn LineNr
 hi! link ALESignColumnWithErrors DiffDelete
 hi! link ALESignColumnWithoutErrors LineNr
