@@ -24,6 +24,7 @@ alias sysupd="sudo apt-get update && sudo apt-get upgrade"
 alias sysupdd="sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y"
 
 alias venv=". venv/bin/activate"
+alias t="tmuxp load ."
 
 alias t="tmuxp load ."
 
