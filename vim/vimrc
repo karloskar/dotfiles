@@ -218,9 +218,5 @@ autocmd FileType scss setlocal et ts=2 sw=2 sts=2
 let g:jsx_ext_required=0
 let g:javascript_enable_domhtmlcss=1
 
-" DeleteTrailingWhitespace
-let g:DeleteTrailingWhitespace = 1
-let g:DeleteTrailingWhitespace_Action = 'delete'
-
 " Let webpack know we've saved a file
 set backupcopy=yes
