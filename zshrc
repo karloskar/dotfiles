@@ -26,6 +26,8 @@ alias sysupdd="sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-g
 alias venv=". venv/bin/activate"
 alias t="tmuxp load ."
 
+alias t="tmuxp load ."
+
 export TERM='xterm-256color'
 
 # zsh stuff
