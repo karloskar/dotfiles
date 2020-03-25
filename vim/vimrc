@@ -22,8 +22,11 @@ Plug 'w0rp/ale'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'morhetz/gruvbox'
 " jsx
-Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
-Plug 'mxw/vim-jsx'
+"Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
+"Plug 'neoclide/vim-jsx-improve', {'for': ['javascript', 'javascript.jsx']}
+"Plug 'amadeus/vim-jsx'
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
 
 
 call plug#end()
@@ -216,8 +219,13 @@ autocmd FileType javascript setlocal et ts=2 sw=2 sts=2
 autocmd FileType scss setlocal et ts=2 sw=2 sts=2
 
 " JSX
-let g:jsx_ext_required=0
-let g:javascript_enable_domhtmlcss=1
+"let g:jsx_ext_required=0
+"let g:javascript_enable_domhtmlcss=1
+highlight def link jsxTagName GruvboxBlue
+highlight def link jsxComponentName GruvboxBlue
+highlight def link jsxAttrib PreProc
+highlight def link jsVariableType PreProc
+
 
 " Let webpack know we've saved a file
 set backupcopy=yes
