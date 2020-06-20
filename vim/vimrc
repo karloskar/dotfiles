@@ -3,30 +3,25 @@ filetype off
 
 call plug#begin('~/.vim/plugged')
 
-"Plug 'cschlueter/vim-wombat'
-"Plug 'fholgado/minibufexpl.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'rstacruz/sparkup'
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
-Plug 'groenewege/vim-less'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'sukima/xmledit'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'w0rp/ale'
+Plug 'alvan/vim-closetag'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'morhetz/gruvbox'
 " jsx
-"Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
-"Plug 'neoclide/vim-jsx-improve', {'for': ['javascript', 'javascript.jsx']}
-"Plug 'amadeus/vim-jsx'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'tmsvg/pear-tree'
 
 
 call plug#end()
@@ -225,6 +220,13 @@ highlight def link jsxTagName GruvboxBlue
 highlight def link jsxComponentName GruvboxBlue
 highlight def link jsxAttrib PreProc
 highlight def link jsVariableType PreProc
+highlight def link jsxPunct PreProc
+highlight def link jsxCloseString PreProc
+" closetag
+let g:closetag_filenames = '*.html,*.js'
+let g:closetag_filetype = 'html,javascript.jsx'
+let g:closetag_xhtml_filenames = '*.xhtml,*.js'
+let g:closetag_xhtml_filetypes = 'xhtml,jsx,javascript.jsx'
 
 
 " Let webpack know we've saved a file

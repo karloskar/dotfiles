@@ -14,7 +14,7 @@ ZSH_THEME="ponty-agnoster"
 plugins=(git fzf)
 
 # User configuration
-export PATH="/home/karloskar/bin:/home/karloskar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="/home/karloskar/bin:/home/karloskar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
 
 source $ZSH/oh-my-zsh.sh
 
