@@ -23,7 +23,6 @@ Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'tmsvg/pear-tree'
 
-
 call plug#end()
 
 " ale
@@ -55,6 +54,9 @@ hi! link ALESignColumnWithoutErrors LineNr
 " Ale/Python
 let g:ale_python_black_executable = '/home/karloskar/.local/bin/black'
 let g:ale_python_black_options = '-l 100'
+
+" Pear Tree
+let g:pear_tree_repeatable_expand = 0
 
 " NERDTree
 nmap <silent> <F3> :NERDTreeToggle<CR>
