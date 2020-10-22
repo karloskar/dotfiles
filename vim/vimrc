@@ -7,6 +7,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'rstacruz/sparkup'
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
+Plug '2072/vim-syntax-for-PHP', { 'for': 'php' }
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -24,6 +25,9 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'tmsvg/pear-tree'
 
 call plug#end()
+
+let g:python_host_prog = "/home/karloskar/.pyenv/shims/python2.7"
+let g:python3_host_prog = "/home/karloskar/.pyenv/shims/python3.7"
 
 " ale
 let g:ale_linters = {

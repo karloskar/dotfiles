@@ -24,9 +24,7 @@ alias sysupd="sudo apt-get update && sudo apt-get upgrade"
 alias sysupdd="sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y"
 
 alias venv=". venv/bin/activate"
-alias t="tmuxp load ."
-
-alias t="tmuxp load ."
+alias t="tmuxp load .tmuxp.yml"
 
 export TERM='xterm-256color'
 
@@ -60,3 +58,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export CLOUDSDK_PYTHON=python
+
+export DISABLE_AUTO_TITLE='true'
